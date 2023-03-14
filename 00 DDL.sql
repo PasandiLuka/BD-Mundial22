@@ -3,7 +3,7 @@ CREATE DATABASE Mundial22;
 USE Mundial22;
 
 CREATE TABLE Pais (
-    idPais TINYINT,
+    idPais TINYINT AUTO_INCREMENT,
     nombre VARCHAR(30) NOT NULL,
     nombreEntrenador VARCHAR(40) NOT NULL,
     grupo CHAR(1) NOT NULL,
@@ -12,21 +12,22 @@ CREATE TABLE Pais (
 );
 
 CREATE TABLE Estadio(
-    idEstadio TINYINT,
+    idEstadio TINYINT AUTO_INCREMENT,
     nombre VARCHAR(40),
     infoEstadio VARCHAR(200),
     CONSTRAINT PK_Estadio PRIMARY KEY (idEstadio),
-    CONSTRAINT UQ_Estadio_nombre (nombre)
+    CONSTRAINT UQ_Estadio_nombre UNIQUE (nombre)
 );
 
 CREATE TABLE Partido(
-    idPartido TINYINT,
-    idLocal TINYINT,
-    idVisitante TINYINT,
-    idEstadio TINYINT,
+    idPartido TINYINT AUTO_INCREMENT,
+    idLocal TINYINT NOT NULL,
+    idVisitante TINYINT NOT NULL,
+    idEstadio TINYINT NOT NULL,
     fecha TIMESTAMP NOT NULL,
-    golesLocales TINYINT UNSIGNED NULL DEFAULT NULL,
-    golesVisitantes TINYINT UNSIGNED NULL DEFAULT NULL,
+    golesLocales TINYINT UNSIGNED NOT NULL DEFAULT 0,
+    golesVisitantes TINYINT UNSIGNED NOT NULL DEFAULT 0,
+    PRIMARY KEY (idPartido),
     CONSTRAINT FK_Partido_Estadio FOREIGN KEY (idEstadio)
         REFERENCES Estadio (idEstadio),
     CONSTRAINT FK_Partido_Pais_Local FOREIGN KEY (idLocal)
@@ -37,37 +38,40 @@ CREATE TABLE Partido(
 
 
 CREATE TABLE Posicion(
-    idPosicion TINYINT,
+    idPosicion TINYINT AUTO_INCREMENT,
     posicion VARCHAR(20),
     CONSTRAINT PK_Posicion PRIMARY KEY (idPosicion)
 );
 
 CREATE TABLE Jugador(
-    idJugador SMALLINT PRIMARY KEY,
+    idJugador SMALLINT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(20),
     nacimiento DATE,
-    numCamiseta TINYINT,
+    numCamiseta TINYINT UNSIGNED,
     idPais TINYINT,
-    idPosicion INT,
+    idPosicion TINYINT,
     CONSTRAINT FK_Jugador_Pais FOREIGN KEY (idPais)
         REFERENCES pais (idPais),
     CONSTRAINT FK_Jugador_Posicion  FOREIGN KEY (idPosicion)
         REFERENCES posicion (idPosicion)
 );
 
-CREATE TABLE Jugador_Partido(
+CREATE TABLE JugadorPartido(
     idJugador SMALLINT PRIMARY KEY,
     idPartido TINYINT,
-    CONSTRAINT FK_Jugador_Partido FOREIGN KEY (idPartido)
-        REFERENCES partido (idPartido)
+    PRIMARY KEY (idJugador, idPartido),
+    CONSTRAINT FK_JugadorPartido_Partido FOREIGN KEY (idPartido)
+        REFERENCES Partido (idPartido),
+    CONSTRAINT FK_JugadorPartido_Jugador FOREIGN KEY (idPartido)
+        REFERENCES Partido (idPartido),
 );
 
 CREATE TABLE Gol (
-    idJugador SMALLINT PRIMARY KEY,
-    idPartido TINYINT,
+    idJugador SMALLINT,
+    idPartido TINYINT NOT NULL,
     minuto TINYINT UNSIGNED,
     CONSTRAINT FK_Gol_Jugador FOREIGN KEY (idJugador)
         REFERENCES Jugador (idJugador),
     CONSTRAINT FK_Gol_Partido FOREIGN KEY (idPartido)
-        REFERENCES Jugador_Partido (idPartido)
+        REFERENCES Partido (idPartido)
 );

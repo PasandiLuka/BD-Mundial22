@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS Mundial22;
-CREATE DATABASE Mundial22;
-USE Mundial22;
+DROP DATABASE IF EXISTS bd_Mundial22;
+CREATE DATABASE bd_Mundial22;
+USE bd_Mundial22;
 
 CREATE TABLE Pais (
     idPais TINYINT AUTO_INCREMENT,
@@ -19,8 +19,16 @@ CREATE TABLE Estadio(
     CONSTRAINT UQ_Estadio_nombre UNIQUE (nombre)
 );
 
+CREATE TABLE TipoPartido(
+    idTipoPartido TINYINT AUTO_INCREMENT,
+    tipoPartido VARCHAR(10),
+    PRIMARY KEY(idTipoPartido),
+    CONSTRAINT UQ_TipoPartido UNIQUE (tipoPartido)
+);
+
 CREATE TABLE Partido(
     idPartido TINYINT AUTO_INCREMENT,
+    idTipoPartido TINYINT,
     idLocal TINYINT NOT NULL,
     idVisitante TINYINT NOT NULL,
     idEstadio TINYINT NOT NULL,
@@ -28,6 +36,8 @@ CREATE TABLE Partido(
     golesLocales TINYINT UNSIGNED NOT NULL DEFAULT 0,
     golesVisitantes TINYINT UNSIGNED NOT NULL DEFAULT 0,
     PRIMARY KEY (idPartido),
+    CONSTRAINT FK_Partido_TipoPartido FOREIGN KEY (idTipoPartido)
+        REFERENCES TipoPartido (idTipoPartido),
     CONSTRAINT FK_Partido_Estadio FOREIGN KEY (idEstadio)
         REFERENCES Estadio (idEstadio),
     CONSTRAINT FK_Partido_Pais_Local FOREIGN KEY (idLocal)
@@ -53,17 +63,18 @@ CREATE TABLE Jugador(
     CONSTRAINT FK_Jugador_Pais FOREIGN KEY (idPais)
         REFERENCES pais (idPais),
     CONSTRAINT FK_Jugador_Posicion  FOREIGN KEY (idPosicion)
-        REFERENCES posicion (idPosicion)
+        REFERENCES posicion (idPosicion),
+    CONSTRAINT UQ_Jugador_CamisetaPais UNIQUE (idPais, numCamiseta)
 );
 
 CREATE TABLE JugadorPartido(
-    idJugador SMALLINT PRIMARY KEY,
+    idJugador SMALLINT,
     idPartido TINYINT,
-    PRIMARY KEY (idJugador, idPartido),
+    CONSTRAINT PK_JugadorPartido PRIMARY KEY (idJugador, idPartido),
     CONSTRAINT FK_JugadorPartido_Partido FOREIGN KEY (idPartido)
         REFERENCES Partido (idPartido),
-    CONSTRAINT FK_JugadorPartido_Jugador FOREIGN KEY (idPartido)
-        REFERENCES Partido (idPartido),
+    CONSTRAINT FK_JugadorPartido_Jugador FOREIGN KEY (idJugador)
+        REFERENCES Jugador (idJugador)
 );
 
 CREATE TABLE Gol (

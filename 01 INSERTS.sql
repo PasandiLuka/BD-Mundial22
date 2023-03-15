@@ -1,23 +1,26 @@
+USE bd_Mundial22;
+-- La informaciòn se obtuvo de: https://www.fifa.com/fifaplus/es/tournaments/mens/worldcup/qatar2022
+
 START TRANSACTION ;
-    SELECT time_zone INTO @actual; 
     SET time_zone ='-03:00';
-    INSERT INTO Pais (idPais, nombre, nombreEntrenador, idGrupo)
-        VALUES  (1, 'Argentina', 'Lionel Scaloni', 3),
-                (2, 'Qatar', 'Félix Sanchez Bas', 1),
-                (3, 'Ecuador', 'Gustavo Alfaro', 1),
-                (4, 'Inglaterra', 'Gareth Southgate', 2),
-                (5, 'Estados Unidos', 'Gregg Berhalter', 2),
-                (6, 'Mexico', 'Gerardo Marino', 3),
-                (7, 'Francia', 'Didier Deschamps', 4),
-                (8, 'Australia', 'Graham Arnold', 4),
-                (9, 'España', 'Luis Enrique', 5),
-                (10, 'Alemania', 'Hansi Flick', 5),
-                (11, 'Belgica', 'Roberto Martinez', 6),
-                (12, 'Croacia', 'Zlatko Dalic', 6),
-                (13, 'Brasil', 'Tite', 7),
-                (14, 'Suiza', 'Murat Yakin', 7),
-                (15, 'Portugal', 'Fernando Santos', 8),
-                (16, 'Uruguay', 'Diego Alonso', 8);
+    INSERT INTO Pais (idPais, nombre, nombreEntrenador, grupo)
+        VALUES  (1, 'Argentina', 'Lionel Scaloni', 'C'),
+                (2, 'Qatar', 'Félix Sanchez Bas', 'A'),
+                (3, 'Ecuador', 'Gustavo Alfaro', 'A'),
+                (4, 'Inglaterra', 'Gareth Southgate', 'B'),
+                (5, 'Estados Unidos', 'Gregg Berhalter', 'B'),
+                (6, 'Mexico', 'Gerardo Marino', 'C'),
+                (7, 'Francia', 'Didier Deschamps', 'D'),
+                (8, 'Australia', 'Graham Arnold', 'D'),
+                (9, 'España', 'Luis Enrique', 'E'),
+                (10, 'Alemania', 'Hansi Flick', 'E'),
+                (11, 'Belgica', 'Roberto Martinez', 'F'),
+                (12, 'Croacia', 'Zlatko Dalic', 'F'),
+                (13, 'Brasil', 'Tite', 'G'),
+                (14, 'Suiza', 'Murat Yakin', 'G'),
+                (15, 'Portugal', 'Fernando Santos', 'H'),
+                (16, 'Uruguay', 'Diego Alonso', 'H'),
+                (17, 'Arabia Saudita', 'Hervé Renard', 'C');
 
     INSERT INTO Posicion (idPosicion, posicion)
         VALUES  (1, 'Arquero'),
@@ -48,7 +51,16 @@ START TRANSACTION ;
                 (36, 'Bruno Fernandes', '1994-09-08', 8, 15, 5),
                 (37, 'Joao Felix', '1999-11-10', 25, 15, 6),
                 (38, 'Cristiano Ronaldo', '1985-02-05', 7, 15, 6),
-                (39, 'Andre Silva', '1995-11-06', 19, 15, 6);
+                (39, 'Andre Silva', '1995-11-06', 9, 15, 6);
+
+    INSERT INTO TipoPartido
+        VALUES (1, 'Grupos');
+
+    INSERT INTO Estadio
+        VALUES (1, 'Estadio de Lusail', 'Inagurado el 09-2022, tiene capacidad para 88.966 espectadores');
+    
+    INSERT INTO Partido (idPartido,  idTipoPartido, idLocal,    idVisitante,   idEstadio,  fecha   ,   golesLocales,   golesVisitantes)
+        VALUES          (1,         1,              1,          17,             1,  '2022-11-22 07:00', 1,          2);
 
 
-    SET time_zone = @actual;
+COMMIT;

@@ -16,6 +16,10 @@ erDiagram
         VARCHAR(40) nombre UK
         VARCHAR(200) descripcion
     }
+    TipoPartido{
+        TINYINT idTipoPartido PK
+        VARCHAR(10) tipoPartido UK
+    }
     Partido{
         TINYINT idPartido PK
         TINYINT idLocal FK
@@ -51,6 +55,7 @@ erDiagram
     Jugador }o--|| Posicion :""
     Jugador }o--|| Pais :""
     Partido }o--|| Estadio :""
+    Partido }o--|| TipoPartido :""
     JugadorPartido }o--|| Jugador :""
     JugadorPartido }o--|| Partido :""
     Gol }o--|| Jugador :""

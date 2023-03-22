@@ -33,7 +33,7 @@ START TRANSACTION ;
         VALUES  ('Emiliano','Martinez', '1992-09-02', 23, 1, 1),
                 ('Cristian', 'Romero', '1998-04-27', 13, 1, 2),
                 ('Nicolas', 'Otamendi', '1988-02-12', 19, 1, 2),
-                ('Marcos', |'Acuña', '1991-10-28', 8, 1, 2),
+                ('Marcos', 'Acuña', '1991-10-28', 8, 1, 2),
                 ('Nahuel', 'Molina', '1998-04-06',26 , 1, 2),
                 ('Leandro','Paredes', '1994-06-29', 5, 1, 3),
                 ('Rodrigo', 'De Paul', '1994-05-24', 7, 1, 3),

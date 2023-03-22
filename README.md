@@ -7,8 +7,8 @@
 erDiagram
     Pais{
         TINYINT idPais PK
-        VARCHAR(30) nombre UK
-        VARCHAR(40) entrenador
+        VARCHAR(18) nombre UK
+        VARCHAR(27) entrenador
         CHAR(1) grupo
     }
     Estadio{

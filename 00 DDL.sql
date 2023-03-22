@@ -56,6 +56,7 @@ CREATE TABLE Posicion(
 CREATE TABLE Jugador(
     idJugador SMALLINT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(20),
+    apellido VARCHAR(20),
     nacimiento DATE,
     numCamiseta TINYINT UNSIGNED,
     idPais TINYINT,

@@ -38,7 +38,8 @@ erDiagram
         TINYINT idPosicion PK
         TINYINT idPais FK
         INT idPosicion FK
-        VARCHAR(20) nombre 
+        VARCHAR(20) nombre
+        VARCHAR(20) apellido
         DATE nacimiento 
         TINYINT_UNSIGNED numCamiseta
     }

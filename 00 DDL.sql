@@ -4,8 +4,8 @@ USE bd_Mundial22;
 
 CREATE TABLE Pais (
     idPais TINYINT AUTO_INCREMENT,
-    nombre VARCHAR(18) NOT NULL,
-    nombreEntrenador VARCHAR(27) NOT NULL,
+    nombre VARCHAR(20) NOT NULL,
+    nombreEntrenador VARCHAR(30) NOT NULL,
     grupo CHAR(1) NOT NULL,
     CONSTRAINT PK_Pais PRIMARY KEY (idPais),
     CONSTRAINT UQ_Pais_nombre UNIQUE (nombre)

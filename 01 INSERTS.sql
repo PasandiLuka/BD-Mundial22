@@ -23,7 +23,7 @@ START TRANSACTION ;
                 (17, 'Ghana', 'Otto Addo', 'H'),
                 (18, 'Inglaterra', 'Gareth Southgate', 'B'),
                 (19, 'Irán', 'Carlos Queiroz', 'B'),
-                (20, 'Japon', 'Hajime Moriyasu', 'E'),
+                (20, 'Japón', 'Hajime Moriyasu', 'E'),
                 (21, 'República de Corea', 'Paulo Jorge Gomes Bento', 'H'),
                 (22, 'Marruecos', 'Hoalid Regragui', 'F'),
                 (23, 'Mexico', 'Gerardo Marino', 'C'),
@@ -70,7 +70,7 @@ START TRANSACTION ;
     ;
     
     INSERT INTO Partido (idPartido,  idTipoPartido, idLocal,    idVisitante,   idEstadio,  fecha   ,   golesLocales,   golesVisitantes)
-        VALUES          (1,         1,              1,          17,             1,  '2022-11-22 07:00', 1,          2)
+        VALUES          (1,         1,              1,          4,             1,  '2022-11-22 07:00', 1,          2)
         
     ;
 

@@ -42,9 +42,9 @@ CREATE TABLE Partido(
     CONSTRAINT FK_Partido_Estadio FOREIGN KEY (idEstadio)
         REFERENCES Estadio (idEstadio),
     CONSTRAINT FK_Partido_Pais_Local FOREIGN KEY (idLocal)
-        REFERENCES pais (idPais),
+        REFERENCES Pais (idPais),
     CONSTRAINT FK_Partido_Pais_Visitante FOREIGN KEY (idVisitante)
-        REFERENCES pais (idPais)
+        REFERENCES Pais (idPais)
 );
 
 
@@ -63,9 +63,9 @@ CREATE TABLE Jugador(
     idPais TINYINT,
     idPosicion TINYINT,
     CONSTRAINT FK_Jugador_Pais FOREIGN KEY (idPais)
-        REFERENCES pais (idPais),
+        REFERENCES Pais (idPais),
     CONSTRAINT FK_Jugador_Posicion  FOREIGN KEY (idPosicion)
-        REFERENCES posicion (idPosicion),
+        REFERENCES Posicion (idPosicion),
     CONSTRAINT UQ_Jugador_CamisetaPais UNIQUE (idPais, numCamiseta)
 );
 

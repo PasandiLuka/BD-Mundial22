@@ -46,7 +46,7 @@ START TRANSACTION ;
     ;
 
     INSERT INTO Jugador (nombre, apellido, nacimiento, numCamiseta, idPais, idPosicion)
-        VALUES  ('Emiliano','Martinez', '1992-09-02', 23, 1, 1),
+        VALUES  ('Emiliano', 'Martinez', '1992-09-02', 23, 1, 1),
                 ('Cristian', 'Romero', '1998-04-27', 13, 1, 2),
                 ('Nicolas', 'Otamendi', '1988-02-12', 19, 1, 2),
                 ('Marcos', 'Acuña', '1991-10-28', 8, 1, 2),
@@ -131,7 +131,33 @@ START TRANSACTION ;
                 ('Niclas', 'Fuellkrug', '1993-02-09', 9, 3, 4),
                 ('Serge', 'Gnabry', '1995-07-14', 10, 3, 4),
                 ('Karim', 'Adeyemi', '2002-01-18', 24, 3, 4),
-                ('Youssoufa', 'Moukoko', '2004-11-20', 26, 3, 4)
+                ('Youssoufa', 'Moukoko', '2004-11-20', 26, 3, 4),
+                ('Fernando', 'Muslera', '1986-06-16', 1, 32, 1),
+                ('Jose', 'Gimenez', '1995-01-20', 2, 32, 2),
+                ('Diego', 'Godin', '1986-02-16', 3, 32, 2),
+                ('Ronald','Araujo', '1999-03-07', 4, 32, 2),
+                ('Matias', 'Vecino', '1991-08-24', 5, 32, 3),
+                ('Rodrigo', 'Bentacur', '1997-06-25', 6, 32, 3),
+                ('Nicolas', 'De La Cruz', '1997-06-01', 7, 32, 3),
+                ('Facundo', 'Pellistri', '2001-12-20', 8, 32, 4),
+                ('Luis', 'Suarez', '1987-01-24', 9, 32, 4),
+                ('Giorgian', 'De Arrascaeta', '1994-06-01', 10, 32, 3),
+                ('Darwin', 'Nunez', '1999-06-24', 11, 32, 4),
+                ('Sebastian', 'Sosa', '1986-08-19', 12, 32, 1),
+                ('Guillermo', 'Varela', '1993-03-24', 13, 32, 2),
+                ('Lucas', 'Torreira', '1996-02-11', 14, 32, 3),
+                ('Federico', 'Valverde', '1998-07-22', 15, 32, 3),
+                ('Mathias', 'Olivera', '1997-10-31', 16, 32, 2),
+                ('Matias', 'Vina', '1997-11-9', 17, 32, 2),
+                ('Maximiliano', 'Gomez', '1996-08-14', 18, 32, 4),
+                ('Sebastian', 'Coates', '1990-10-07', 19, 32, 2),
+                ('Facundo', 'Torres', '2000-04-13', 20, 32, 4),
+                ('Edinson', 'Cavani', '1987-02-14', 21, 32, 4),
+                ('Martin', 'Caceres', '1987-04-07', 22, 32, 2),
+                ('Sergio', 'Rochet', '1993-03-23', 23, 32, 1),
+                ('Agustin', 'Canobbio', '1998-10-01', 24, 32, 3),
+                ('Manuel', 'Ugarte', '2001-04-11', 25, 32, 3),
+                ('José Luis', 'Rodríguez Bebanz', '1999-03-14', 26, 32, 2),
 
     ;
 

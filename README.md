@@ -5,10 +5,10 @@
 
 ```mermaid
 erDiagram
-    Pais{
+    Pais{   
         TINYINT idPais PK
-        VARCHAR(30) nombre UK
-        VARCHAR(40) entrenador
+        VARCHAR(20) nombre UK
+        VARCHAR(30) entrenador
         CHAR(1) grupo
     }
     Estadio{
@@ -25,20 +25,22 @@ erDiagram
         TINYINT idLocal FK
         TINYINT idVisitante FK
         TINYINT idEstadio FK
+        TINYINT idTipoPartido
         TIMESTAMP fecha
         TINYINT golesLocales
         TINYINT golesVisitantes
     }
     Posicion{
-        SMALLINT idJugador PK
+        TINYINT idJugador PK
         TINYINT idPosicion PK
         VARCHAR(20) posicion UK
     }
     Jugador{
-        TINYINT idPosicion PK
+        SMALLINT idJugador PK
         TINYINT idPais FK
-        INT idPosicion FK
-        VARCHAR(20) nombre 
+        TINYINT idPosicion FK
+        VARCHAR(20) nombre
+        VARCHAR(20) apellido
         DATE nacimiento 
         TINYINT_UNSIGNED numCamiseta
     }

@@ -4,8 +4,8 @@ USE bd_Mundial22;
 
 CREATE TABLE Pais (
     idPais TINYINT AUTO_INCREMENT,
-    nombre VARCHAR(30) NOT NULL,
-    nombreEntrenador VARCHAR(40) NOT NULL,
+    nombre VARCHAR(20) NOT NULL,
+    nombreEntrenador VARCHAR(30) NOT NULL,
     grupo CHAR(1) NOT NULL,
     CONSTRAINT PK_Pais PRIMARY KEY (idPais),
     CONSTRAINT UQ_Pais_nombre UNIQUE (nombre)
@@ -41,9 +41,9 @@ CREATE TABLE Partido(
     CONSTRAINT FK_Partido_Estadio FOREIGN KEY (idEstadio)
         REFERENCES Estadio (idEstadio),
     CONSTRAINT FK_Partido_Pais_Local FOREIGN KEY (idLocal)
-        REFERENCES pais (idPais),
+        REFERENCES Pais (idPais),
     CONSTRAINT FK_Partido_Pais_Visitante FOREIGN KEY (idVisitante)
-        REFERENCES pais (idPais)
+        REFERENCES Pais (idPais)
 );
 
 
@@ -56,14 +56,15 @@ CREATE TABLE Posicion(
 CREATE TABLE Jugador(
     idJugador SMALLINT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(20),
+    apellido VARCHAR(20),
     nacimiento DATE,
     numCamiseta TINYINT UNSIGNED,
     idPais TINYINT,
     idPosicion TINYINT,
     CONSTRAINT FK_Jugador_Pais FOREIGN KEY (idPais)
-        REFERENCES pais (idPais),
+        REFERENCES Pais (idPais),
     CONSTRAINT FK_Jugador_Posicion  FOREIGN KEY (idPosicion)
-        REFERENCES posicion (idPosicion),
+        REFERENCES Posicion (idPosicion),
     CONSTRAINT UQ_Jugador_CamisetaPais UNIQUE (idPais, numCamiseta)
 );
 

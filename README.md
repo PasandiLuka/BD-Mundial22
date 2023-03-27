@@ -29,6 +29,7 @@ erDiagram
         TIMESTAMP fecha
         TINYINT golesLocales
         TINYINT golesVisitantes
+        TINYINT_UNSIGNED duracion
     }
     Posicion{
         TINYINT idJugador PK
@@ -47,11 +48,17 @@ erDiagram
     JugadorPartido{
         SMALLINT idJugador PK, FK
         TINYINT idPartido PK, FK
+        SMALLINT idReemplazo FK
+        TINYINT_UNSIGNED ingreso
+        TINYINT_UNSIGNED ingresoAdicionado
+        TINYINT_UNSIGNED egreso
+        TINYINT_UNSIGNED egresoAdicionado
     }
     Gol{
         SMALLINT idJugador PK
         TINYINT idPartido PK, FK
         TINYINT_UNSIGNED minuto PK
+        BOOL enContra
     }
 
     Jugador }o--|| Posicion :""

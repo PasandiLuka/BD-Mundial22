@@ -1,2 +1,3 @@
 SOURCE 00 DDL.sql
+SOURCE funciones.sql
 SOURCE 01 INSERTS.sql

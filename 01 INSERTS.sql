@@ -192,5 +192,24 @@ START TRANSACTION ;
         
     ;
 
+    INSERT INTO JugadorPartido (idJugador, idPartido, idReemplazo, ingreso, ingresoAdicionado, egreso, egresoAdicionado)
+        VALUES          (idJugador(1, 23)   ,  1 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 3)    ,  1 ,idJugador(1, 8),   NULL   ,   NULL        ,   71    ,   NULL),
+                        (idJugador(1, 13)   ,  1 ,idJugador(1, 25),  NULL   ,   NULL        ,   59    ,   NULL),
+                        (idJugador(1, 19)   ,  1 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 26)   ,  1 ,   NULL       ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 5)    ,  1,idJugador(1, 24),  NULL    ,   NULL        ,   59    ,   NULL),
+                        (idJugador(1, 7)    ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 11)   ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 17)   ,  1,idJugador(1, 9),   NULL    ,   NULL        ,   59    ,   NULL),
+                        (idJugador(1, 10)   ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 22)   ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 8)    ,  1,idJugador(1, 3),   71      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 9)    ,  1,idJugador(1,17),   59      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1,24)    ,  1,idJugador(1, 5),   59      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1,25)    ,  1,idJugador(1,13),   59      ,   NULL        ,   NULL    ,   NULL)
+    
+    ;
+
 
 COMMIT;

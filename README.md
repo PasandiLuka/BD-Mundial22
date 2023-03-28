@@ -72,3 +72,9 @@ erDiagram
 
 
 ```
+
+## Relevamiento
+
+## Créditos
+
+Ayudaron en este script alumnos de 5º7º Ciclo 2023

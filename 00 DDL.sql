@@ -28,7 +28,7 @@ CREATE TABLE TipoPartido(
 
 CREATE TABLE Partido(
     idPartido TINYINT AUTO_INCREMENT,
-    idTipoPartido TINYINT,
+    idTipoPartido TINYINT NOT NULL,
     idLocal TINYINT NOT NULL,
     idVisitante TINYINT NOT NULL,
     idEstadio TINYINT NOT NULL,
@@ -50,8 +50,9 @@ CREATE TABLE Partido(
 
 CREATE TABLE Posicion(
     idPosicion TINYINT AUTO_INCREMENT,
-    posicion VARCHAR(20),
-    CONSTRAINT PK_Posicion PRIMARY KEY (idPosicion)
+    posicion VARCHAR(20) NOT NULL,
+    CONSTRAINT PK_Posicion PRIMARY KEY (idPosicion),
+    CONSTRAINT UQ_Posicion_posicion UNIQUE (posicion)
 );
 
 CREATE TABLE Jugador(
@@ -83,7 +84,19 @@ CREATE TABLE JugadorPartido(
     CONSTRAINT FK_JugadorPartido_Jugador FOREIGN KEY (idJugador)
         REFERENCES Jugador (idJugador),
     CONSTRAINT FK_JugadorPartido_Reemplazo FOREIGN KEY (idReemplazo)
-        REFERENCES Jugador (idJugador)
+        REFERENCES Jugador (idJugador),
+    CONSTRAINT CHK_JugadorPartido CHECK (
+        -- Es Jugador sin cambios
+        ((idReemplazo IS NULL) AND (ingreso IS NULL) AND (ingresoAdicionado IS NULL)
+        AND (egreso IS NULL) AND (egresoAdicionado is NULL))
+        OR (((idReemplazo != idJugador) AND (idReemplazo IS NOT NULL))
+            -- Es jugador reemplazado
+            AND ((egreso IS NOT NULL)
+            -- Es jugador reemplazo
+                OR  (ingreso IS NOT NULL)
+            )
+        )
+    )
 );
 
 CREATE TABLE Gol (

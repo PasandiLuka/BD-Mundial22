@@ -1,4 +1,4 @@
-USE bd_Mundial22;
+USE bd_Mundial22 ;
 
 DELIMITER $$
 DROP FUNCTION IF EXISTS idJugador $$

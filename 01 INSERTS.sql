@@ -1,4 +1,4 @@
-USE bd_Mundial22;
+USE bd_Mundial22 ;
 -- La informaciòn se obtuvo de: https://www.fifa.com/fifaplus/es/tournaments/mens/worldcup/qatar2022
 
 START TRANSACTION ;
@@ -46,7 +46,8 @@ START TRANSACTION ;
     ;
 
     INSERT INTO Jugador (nombre, apellido, nacimiento, numCamiseta, idPais, idPosicion)
-        VALUES  ('Franco', 'Armani', '1986-10-16', 1, 1, 1),
+        VALUES  -- Argentina
+                ('Franco', 'Armani', '1986-10-16', 1, 1, 1),
                 ('Juan', 'Foyth', '1998-01-12', 2, 1, 2),
                 ('Nicolás', 'Tagliafico', '1992-08-31', 3, 1, 2),
                 ('Gonzalo', 'Montiel', '1997-01-01', 4, 1, 2),
@@ -72,6 +73,7 @@ START TRANSACTION ;
                 ('Enzo', 'Fernandez', '2001-01-17', 24, 1, 3),
                 ('Lisandro', 'Martínez', '1998-01-18', 25, 1, 2),
                 ('Nahuel', 'Molina', '1998-04-06', 26 , 1, 2),
+                -- Francia
                 ('Hugo', 'Lloris', '1986-12-26', 1, 2, 1),
                 ('Steve', 'Mandada', '1985-03-27', 16, 2, 1),
                 ('Alphonse ', 'Areola', '1993-02-26', 23, 2, 1),
@@ -97,6 +99,7 @@ START TRANSACTION ;
                 ('Randai', 'Kolo Muani', '1996-06-12', 12, 2, 4),
                 ('Kingsley', 'Coman', '1998-12-04', 20, 2, 4),
                 ('Marcus', 'Thuram', '1997-08-05', 26, 2, 4),
+                -- Portugal
                 ('Rui', 'Patricio', '1988-02-14', 1, 26, 1),
                 ('Diogo', 'Costa', '1999-09-19',22 ,26, 1),
                 ('Jose', 'Sa', '1993-01-16', 12, 26, 1),
@@ -122,6 +125,7 @@ START TRANSACTION ;
                 ('Ricardo', 'Horta', '1994-09-14', 21, 26, 4),
                 ('Rafael', 'Leao', '1999-06-09', 15, 26, 4),
                 ('Goncalo', 'Ramos', '2001-06-10', 26, 26, 4),
+                -- Alemania
                 ('Marc-Andre', 'Ter stegen', '1992-04-30', 22, 3, 1),
                 ('Kevin','Trapp','1990-07-08',12,3,1),
                 ('Manuel', 'Neuer', '1986-03-27', 1, 3, 1),
@@ -148,6 +152,7 @@ START TRANSACTION ;
                 ('Serge', 'Gnabry', '1995-07-14', 10, 3, 4),
                 ('Karim', 'Adeyemi', '2002-01-18', 24, 3, 4),
                 ('Youssoufa', 'Moukoko', '2004-11-20', 26, 3, 4),
+                -- Uruguay
                 ('Fernando', 'Muslera', '1986-06-16', 1, 32, 1),
                 ('Jose', 'Gimenez', '1995-01-20', 2, 32, 2),
                 ('Diego', 'Godin', '1986-02-16', 3, 32, 2),
@@ -193,7 +198,8 @@ START TRANSACTION ;
     ;
 
     INSERT INTO JugadorPartido (idJugador, idPartido, idReemplazo, ingreso, ingresoAdicionado, egreso, egresoAdicionado)
-        VALUES          (idJugador(1, 23)   ,  1 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+        VALUES              -- Partido Argentina - Arabia Saudita - Grupo C
+                        (idJugador(1, 23)   ,  1 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1, 3)    ,  1 ,idJugador(1, 8),   NULL   ,   NULL        ,   71    ,   NULL),
                         (idJugador(1, 13)   ,  1 ,idJugador(1, 25),  NULL   ,   NULL        ,   59    ,   NULL),
                         (idJugador(1, 19)   ,  1 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),

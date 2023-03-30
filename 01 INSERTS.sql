@@ -178,7 +178,37 @@ START TRANSACTION ;
                 ('Sergio', 'Rochet', '1993-03-23', 23, 32, 1),
                 ('Agustin', 'Canobbio', '1998-10-01', 24, 32, 3),
                 ('Manuel', 'Ugarte', '2001-04-11', 25, 32, 3),
-                ('José Luis', 'Rodríguez Bebanz', '1999-03-14', 26, 32, 2)
+                ('José Luis', 'Rodríguez Bebanz', '1999-03-14', 26, 32, 2),
+                -- Arabia Saudita
+                ('Mohammed', 'Alyami', '1997-08-14', 1, 4, 1),
+                ('Mohammed', 'Alowais', '1991-10-10', 21, 4, 1),
+                ('Nawaf', 'Alaqidi', '2000-05-10', 22, 4, 1),
+                ('Sultan', 'Alghannam', '1994-05-06', 2, 4, 2),
+                ('Abdullah', 'Madu', '1993-07-15', 3, 4, 2),
+                ('Abdulelah', 'Alamri', '1997-01-15', 4, 4, 2),
+                ('Ali', 'Albulayhi', '1989-11-21', 5, 4, 2),
+                ('Mohammed', 'Alburayk', '1992-09-15', 6, 4, 2),
+                ('Saud', 'Abdulhamid', '1999-07-18', 12, 4, 2),
+                ('Yasser', 'Alshahrani', '1992-05-25', 13, 4, 2), 
+                ('Hassan', 'Altambakti', '1999-02-09', 17, 4, 2),
+                ('Salman', 'Alfaraj', '1989-08-01', 7, 4, 3),
+                ('Abdulelah', 'Almalki','1994-10-11', 8, 4, 3),
+                ('Abdullah', 'Otayf', '1992-08-03', 14, 4, 3),
+                ('Ali', 'Alhassan', '1997-03-04', 15, 4, 3),
+                ('Sami', 'Alnaji', '1997-02-07', 16, 4, 3),
+                ('Nawaf', 'Al Abid', '1990-01-26,', 18, 4, 3),
+                ('Mohamed', 'Kanno', '1994-09-22', 23, 4, 3),
+                ('Nasser', 'Aldawsari', '1998-12-19', 24, 4, 3),
+                ('Riyadh', 'Sharahili', '1993-04-29', 26, 4, 3),
+                ('Feras', 'Albrikan', '2000-05-14', 9, 4, 4),
+                ('Salem', 'Aldawsari', '1991-08-19', 10, 4, 4),
+                ('Saleh', 'Alshehri', '1993-11-01', 11, 4, 4),
+                ('Hatan', 'Bahbri', '1992-07-16', 19, 4, 4),
+                ('Abdulrahman', 'Alobud', '1995-06-01', 20, 4, 4),
+                ('Haitham', 'Asiri', '2001-03-25', 25, 4, 4)
+
+
+
 
     ;
 

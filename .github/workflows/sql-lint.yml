@@ -1,0 +1,31 @@
+name: SQL Linting
+
+on:
+  push:
+    branches:
+      - main
+      - dml
+  pull_request:
+    branches:
+      - main
+      - dml
+
+jobs:
+  sqlfluff:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Install dependencies
+      run: |
+        pip install sqlfluff
+
+    - name: Lint SQL files
+      run: sqlfluff lint --check ./*.sql

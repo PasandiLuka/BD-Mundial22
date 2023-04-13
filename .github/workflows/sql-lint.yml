@@ -28,4 +28,4 @@ jobs:
         pip install sqlfluff
 
     - name: Lint SQL files
-      run: sqlfluff lint --check ./*.sql
+      run: sqlfluff lint --dialect mysql --format github-annotation --annotation-level error ./*.sql

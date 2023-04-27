@@ -153,7 +153,7 @@ START TRANSACTION ;
                 ('Hatan', 'Bahbri', '1992-07-16', 19, 4, 4),
                 ('Abdulrahman', 'Alobud', '1995-06-01', 20, 4, 4),
                 ('Haitham', 'Asiri', '2001-03-25', 25, 4, 4),
-                 -- Australia
+                -- Australia
                 ('Mathew', 'Ryan', '1992-04-08', 1, 5, 1),
                 ('Andrew', 'Redamyne', '1989-01-13', 12, 5, 1),
                 ('Danny', 'Vukovic', '1985-03-27', 18, 5, 1),

@@ -605,21 +605,36 @@ START TRANSACTION ;
     INSERT INTO JugadorPartido (idJugador, idPartido, idReemplazo, ingreso, ingresoAdicionado, egreso, egresoAdicionado)
         VALUES              -- Partido Argentina - Arabia Saudita - Grupo C
                         (idJugador(1, 23)   ,  1 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
-                        (idJugador(1, 3)    ,  1 ,idJugador(1, 8),   NULL   ,   NULL        ,   71    ,   NULL),
-                        (idJugador(1, 13)   ,  1 ,idJugador(1, 25),  NULL   ,   NULL        ,   59    ,   NULL),
+                        (idJugador(1, 3)    ,  1 ,idJugador(1, 8),   NULL   ,   NULL        ,   71      ,   NULL),
+                        (idJugador(1, 13)   ,  1 ,idJugador(1, 25),  NULL   ,   NULL        ,   59      ,   NULL),
                         (idJugador(1, 19)   ,  1 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1, 26)   ,  1 ,   NULL       ,   NULL    ,   NULL        ,   NULL    ,   NULL),
-                        (idJugador(1, 5)    ,  1,idJugador(1, 24),  NULL    ,   NULL        ,   59    ,   NULL),
+                        (idJugador(1, 5)    ,  1,idJugador(1, 24),  NULL    ,   NULL        ,   59      ,   NULL),
                         (idJugador(1, 7)    ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1, 11)   ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
-                        (idJugador(1, 17)   ,  1,idJugador(1, 9),   NULL    ,   NULL        ,   59    ,   NULL),
+                        (idJugador(1, 17)   ,  1,idJugador(1, 9),   NULL    ,   NULL        ,   59      ,   NULL),
                         (idJugador(1, 10)   ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1, 22)   ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1, 8)    ,  1,idJugador(1, 3),   71      ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1, 9)    ,  1,idJugador(1,17),   59      ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1,24)    ,  1,idJugador(1, 5),   59      ,   NULL        ,   NULL    ,   NULL),
-                        (idJugador(1,25)    ,  1,idJugador(1,13),   59      ,   NULL        ,   NULL    ,   NULL)
-    
+                        (idJugador(1,25)    ,  1,idJugador(1,13),   59      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(4,21)    ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(4,5)     ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(4,17)    ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(4,13)    ,  1,idJugador(4,6) ,   NULL    ,   NULL        ,   NULL    ,   9   ),
+                        (idJugador(4,12)    ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(4,8)     ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(4,23)    ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(4,7)     ,  1,idJugador(4,18),   NULL    ,   NULL        ,   NULL    ,   4   ),
+                        (idJugador(4,9)     ,  1,idJugador(4,25),   NULL    ,   NULL        ,   89      ,   NULL),
+                        (idJugador(4,10)    ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(4,11)    ,  1,idJugador(4,2) ,   NULL    ,   NULL        ,   78      ,   NULL),
+                        (idJugador(4,6)     ,  1    ,   NULL    ,   NULL    ,   9           ,   NULL    ,   NULL),
+                        (idJugador(4,18)    ,  1,idJugador(4,4) ,   NULL    ,   4           ,   88      ,   NULL),
+                        (idJugador(4,25)    ,  1    ,   NULL    ,   89      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(4,2)     ,  1    ,   NULL    ,   78      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(4,4)     ,  1    ,   NULL    ,   88      ,   NULL        ,   NULL    ,   NULL)
     ;
 
 

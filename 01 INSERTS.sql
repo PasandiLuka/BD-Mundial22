@@ -619,6 +619,7 @@ START TRANSACTION ;
                         (idJugador(1, 9)    ,  1,idJugador(1,17),   59      ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1,24)    ,  1,idJugador(1, 5),   59      ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1,25)    ,  1,idJugador(1,13),   59      ,   NULL        ,   NULL    ,   NULL),
+                        --Jugadores de Arabia Saudita.
                         (idJugador(4,21)    ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(4,5)     ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(4,17)    ,  1    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),

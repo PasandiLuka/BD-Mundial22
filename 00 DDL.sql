@@ -89,7 +89,8 @@ CREATE TABLE JugadorPartido(
         -- Es Jugador sin cambios
         ((idReemplazo IS NULL) AND (ingreso IS NULL) AND (ingresoAdicionado IS NULL)
         AND (egreso IS NULL) AND (egresoAdicionado is NULL))
-        OR (((idReemplazo != idJugador) AND (idReemplazo IS NOT NULL))
+        -- Evalúo si tiene un cambio
+        OR (((idReemplazo IS NOT NULL) AND (idReemplazo != idJugador))
             -- Es jugador reemplazado
             AND ((egreso IS NOT NULL)
             -- Es jugador reemplazo

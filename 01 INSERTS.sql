@@ -598,7 +598,9 @@ START TRANSACTION ;
     ;
     
     INSERT INTO Partido (idPartido,  idTipoPartido, idLocal,    idVisitante,   idEstadio,  fecha   ,   golesLocales,   golesVisitantes)
-        VALUES          (1,         1,              1,          4,             1,  '2022-11-22 07:00', 1,          2)
+        VALUES          (1,         1,              1,          4,             1,  '2022-11-22 07:00', 1,          2),
+                        (2,         1,              1,          23,            1,  '2022-11-26 16:00', 2,          0),
+                        (3,         1,              25,         1,             1,  '2022-11-30 16:00', 0,          2)
         
     ;
 
@@ -635,7 +637,42 @@ START TRANSACTION ;
                         (idJugador(4,18)    ,  1,idJugador(4,4) ,   45      ,   4           ,   88      ,   NULL),
                         (idJugador(4,25)    ,  1,idJugador(4,9) ,   89      ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(4,2)     ,  1,idJugador(4,11),   78      ,   NULL        ,   NULL    ,   NULL),
-                        (idJugador(4,4)     ,  1,idJugador(4,18),   88      ,   NULL        ,   NULL    ,   NULL)
+                        (idJugador(4,4)     ,  1,idJugador(4,18),   88      ,   NULL        ,   NULL    ,   NULL),
+                        -- Partido Argentina - Mexico - Grupo C
+                        (idJugador(1, 23)   ,  2 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 4)    ,  2 ,idJugador(1, 26), NULL    ,   NULL        ,   63      ,   NULL),
+                        (idJugador(1, 26)   ,  2 ,idJugador(1, 4) , 63      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 8)    ,  2 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 19)   ,  2 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1,25)    ,  2 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 7)    ,  2 ,   NULL       ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 11)   ,  2 ,idJugador(1, 13), NULL    ,   NULL        ,   69      ,   NULL),
+                        (idJugador(1, 13)   ,  2 ,idJugador(1, 11), 69      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 18)   ,  2 ,idJugador(1, 24), NULL    ,   NULL        ,   57      ,   NULL),
+                        (idJugador(1, 24)   ,  2 ,idJugador(1, 18), 57      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 20)   ,  2 ,idJugador(1, 14), NULL    ,   NULL        ,   69      ,   NULL),
+                        (idJugador(1, 14)   ,  2 ,idJugador(1, 20), 69      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 10)   ,  2    ,   NULL    ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 22)   ,  2, idJugador(1, 9) , NULL    ,   NULL        ,   63      ,   NULL),
+                        (idJugador(1, 9)    ,  2, idJugador(1, 22), 63      ,   NULL        ,   NULL    ,   NULL),
+                        -- Partido Polonia - Argentina - Grupo C
+                        (idJugador(1, 23)   ,  3 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 8)    ,  3 ,idJugador(1, 3) , NULL    ,   NULL        ,   59      ,   NULL),
+                        (idJugador(1, 3)    ,  3 ,idJugador(1, 8) , 59      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 13)   ,  3 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 19)   ,  3 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 26)   ,  3 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 7)    ,  3 ,   NULL       ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 20)   ,  3 ,idJugador(1, 16), NULL    ,   NULL        ,   83      ,   NULL),
+                        (idJugador(1, 16)   ,  3 ,idJugador(1, 20), 83      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 24)   ,  3 ,idJugador(1, 6) , NULL    ,   NULL        ,   79      ,   NULL),
+                        (idJugador(1, 6)    ,  3 ,idJugador(1, 24), 79      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 9)    ,  3, idJugador(1, 22), NULL    ,   NULL        ,   79      ,   NULL),
+                        (idJugador(1, 22)   ,  3, idJugador(1, 9) , 79      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 10)   ,  3    ,   NULL      , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 11)   ,  3 ,idJugador(1, 5) , NULL    ,   NULL        ,   59      ,   NULL),
+                        (idJugador(1, 5)    ,  3 ,idJugador(1, 11), 59      ,   NULL        ,   NULL    ,   NULL)
+                        
     ;
 
 

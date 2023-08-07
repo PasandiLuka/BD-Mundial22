@@ -588,7 +588,8 @@ START TRANSACTION ;
     ;
 
     INSERT INTO TipoPartido
-        VALUES (1, 'Grupos')
+        VALUES  (1, 'Grupos'),
+                (2, 'Octavos')
 
     ;
 
@@ -600,7 +601,8 @@ START TRANSACTION ;
     INSERT INTO Partido (idPartido,  idTipoPartido, idLocal,    idVisitante,   idEstadio,  fecha   ,   golesLocales,   golesVisitantes)
         VALUES          (1,         1,              1,          4,             1,  '2022-11-22 07:00', 1,          2),
                         (2,         1,              1,          23,            1,  '2022-11-26 16:00', 2,          0),
-                        (3,         1,              25,         1,             1,  '2022-11-30 16:00', 0,          2)
+                        (3,         1,              25,         1,             1,  '2022-11-30 16:00', 0,          2),
+                        (4,         2,              1,          5,             1,  '2022-12-03 16:00', 1,          2)
         
     ;
 
@@ -644,7 +646,7 @@ START TRANSACTION ;
                         (idJugador(1, 26)   ,  2 ,idJugador(1, 4) , 63      ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1, 8)    ,  2 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1, 19)   ,  2 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
-                        (idJugador(1,25)    ,  2 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 25)   ,  2 ,  NULL        ,   NULL    ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1, 7)    ,  2 ,   NULL       ,   NULL    ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1, 11)   ,  2 ,idJugador(1, 13), NULL    ,   NULL        ,   69      ,   NULL),
                         (idJugador(1, 13)   ,  2 ,idJugador(1, 11), 69      ,   NULL        ,   NULL    ,   NULL),
@@ -671,8 +673,25 @@ START TRANSACTION ;
                         (idJugador(1, 22)   ,  3, idJugador(1, 9) , 79      ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1, 10)   ,  3    ,   NULL      , NULL    ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1, 11)   ,  3 ,idJugador(1, 5) , NULL    ,   NULL        ,   59      ,   NULL),
-                        (idJugador(1, 5)    ,  3 ,idJugador(1, 11), 59      ,   NULL        ,   NULL    ,   NULL)
-                        
+                        (idJugador(1, 5)    ,  3 ,idJugador(1, 11), 59      ,   NULL        ,   NULL    ,   NULL),
+                        -- Partido Argentina - Australia - Octavos
+                        (idJugador(1, 23)   ,  4 ,  NULL          , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 8)    ,  4 ,idJugador(1, 3) , NULL    ,   NULL        ,   71      ,   NULL),
+                        (idJugador(1, 3)    ,  4 ,idJugador(1, 8) , 71      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 19)   ,  4 ,  NULL          , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 13)   ,  4 ,  NULL          , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 26)   ,  4 ,idJugador(1, 14), NULL    ,   NULL        ,   80      ,   NULL),
+                        (idJugador(1, 14)   ,  4 ,idJugador(1, 26), 80      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 7)    ,  4 ,   NULL         , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 20)   ,  4 ,idJugador(1, 4) , NULL    ,   NULL        ,   80      ,   NULL),
+                        (idJugador(1, 4)    ,  4 ,idJugador(1, 20), 80      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 24)   ,  4 ,idJugador(1, 6) , NULL    ,   NULL        ,   79      ,   NULL),
+                        (idJugador(1, 6)    ,  4 ,idJugador(1, 24), 79      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 9)    ,  4 ,idJugador(1, 22), NULL    ,   NULL        ,   71      ,   NULL),
+                        (idJugador(1, 22)   ,  4 ,idJugador(1, 9) , 71      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 10)   ,  4 ,   NULL         , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 17)   ,  4 ,idJugador(1, 25), NULL    ,   NULL        ,   50      ,   NULL),
+                        (idJugador(1, 25)   ,  4 ,idJugador(1, 17), 50      ,   NULL        ,   NULL    ,   NULL)
     ;
 
 

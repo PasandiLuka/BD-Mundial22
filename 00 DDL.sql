@@ -35,7 +35,7 @@ CREATE TABLE Partido(
     fecha TIMESTAMP NOT NULL,
     golesLocales TINYINT UNSIGNED NOT NULL DEFAULT 0,
     golesVisitantes TINYINT UNSIGNED NOT NULL DEFAULT 0,
-    duracion TINYINT UNSIGNED DEFAULT 0,
+    duracion TINYINT UNSIGNED DEFAULT 90,
     PRIMARY KEY (idPartido),
     CONSTRAINT FK_Partido_TipoPartido FOREIGN KEY (idTipoPartido)
         REFERENCES TipoPartido (idTipoPartido),
@@ -57,12 +57,12 @@ CREATE TABLE Posicion(
 
 CREATE TABLE Jugador(
     idJugador SMALLINT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(20),
-    apellido VARCHAR(20),
-    nacimiento DATE,
-    numCamiseta TINYINT UNSIGNED,
-    idPais TINYINT,
-    idPosicion TINYINT,
+    idPais TINYINT NOT NULL,
+    idPosicion TINYINT NOT NULL,
+    nombre VARCHAR(20) NOT NULL,
+    apellido VARCHAR(20) NOT NULL,
+    nacimiento DATE NOT NULL,
+    numCamiseta TINYINT UNSIGNED NOT NULL,
     CONSTRAINT FK_Jugador_Pais FOREIGN KEY (idPais)
         REFERENCES Pais (idPais),
     CONSTRAINT FK_Jugador_Posicion  FOREIGN KEY (idPosicion)
@@ -101,10 +101,10 @@ CREATE TABLE JugadorPartido(
 );
 
 CREATE TABLE Gol (
-    idJugador SMALLINT,
+    idJugador SMALLINT NOT NULL,
     idPartido TINYINT NOT NULL,
     minuto TINYINT UNSIGNED,
-    enContra BOOL DEFAULT FALSE,
+    enContra BOOL NOT NULL DEFAULT FALSE,
     CONSTRAINT FK_Gol_Jugador FOREIGN KEY (idJugador)
         REFERENCES Jugador (idJugador),
     CONSTRAINT FK_Gol_Partido FOREIGN KEY (idPartido)

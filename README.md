@@ -32,7 +32,6 @@ erDiagram
         TINYINT_UNSIGNED duracion
     }
     Posicion{
-        TINYINT idJugador PK
         TINYINT idPosicion PK
         VARCHAR(20) posicion UK
     }

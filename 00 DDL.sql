@@ -21,7 +21,7 @@ CREATE TABLE Estadio(
 
 CREATE TABLE TipoPartido(
     idTipoPartido TINYINT AUTO_INCREMENT,
-    tipoPartido VARCHAR(10),
+    tipoPartido CHAR(13),
     PRIMARY KEY(idTipoPartido),
     CONSTRAINT UQ_TipoPartido UNIQUE (tipoPartido)
 );
@@ -50,7 +50,7 @@ CREATE TABLE Partido(
 
 CREATE TABLE Posicion(
     idPosicion TINYINT AUTO_INCREMENT,
-    posicion VARCHAR(20) NOT NULL,
+    posicion CHAR(13) NOT NULL,
     CONSTRAINT PK_Posicion PRIMARY KEY (idPosicion),
     CONSTRAINT UQ_Posicion_posicion UNIQUE (posicion)
 );
@@ -108,5 +108,17 @@ CREATE TABLE Gol (
     CONSTRAINT FK_Gol_Jugador FOREIGN KEY (idJugador)
         REFERENCES Jugador (idJugador),
     CONSTRAINT FK_Gol_Partido FOREIGN KEY (idPartido)
+        REFERENCES Partido (idPartido)
+);
+
+CREATE TABLE DefinicionPenal (
+    idPartido TINYINT,
+    idJugador SMALLINT,
+    turno TINYINT UNSIGNED,
+    acierto BOOL NOT NULL,
+    CONSTRAINT PK_DefinicionPenal PRIMARY KEY (idPartido, idJugador, turno),
+    CONSTRAINT FK_DefinicionPenal_Jugador FOREIGN KEY (idJugador)
+        REFERENCES Jugador (idJugador),
+    CONSTRAINT FK_DefinicionPenal_Partido FOREIGN KEY (idPartido)
         REFERENCES Partido (idPartido)
 );

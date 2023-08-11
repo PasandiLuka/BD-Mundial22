@@ -591,8 +591,9 @@ START TRANSACTION ;
         VALUES  (1, 'Grupos'),
                 (2, 'Octavos'),
                 (3, 'Cuartos'),
-                (4, 'Semifinal')
-
+                (4, 'Semifinal'),
+                (5, 'Final'),
+                (6, 'Tercer Puesto')
     ;
 
     INSERT INTO Estadio
@@ -606,7 +607,8 @@ START TRANSACTION ;
                         (3,         1,              25,         1,             1,  '2022-11-30 16:00', 0,          2),
                         (4,         2,              1,          5,             1,  '2022-12-03 16:00', 1,          2),
                         (5,         3,              24,         1,             1,  '2022-12-09 16:00', 2,          2),
-                        (6,         3,              1,          11,            1,  '2022-12-13 16:00', 3,          0)
+                        (6,         4,              1,          11,            1,  '2022-12-13 16:00', 3,          0),
+                        (7,         5,              1,          2,             1,  '2022-12-18 12:00', 3,          3)
         
     ;
 
@@ -730,7 +732,25 @@ START TRANSACTION ;
                         (idJugador(1, 24)   ,  6 ,  NULL          , NULL    ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1, 9)    ,  6 ,idJugador(1, 21), NULL    ,   NULL        ,   74      ,   NULL),
                         (idJugador(1, 21)   ,  6 ,idJugador(1, 9) , 74      ,   NULL        ,   NULL    ,   NULL),
-                        (idJugador(1, 10)   ,  6 ,   NULL         , NULL    ,   NULL        ,   NULL    ,   NULL)
+                        (idJugador(1, 10)   ,  6 ,   NULL         , NULL    ,   NULL        ,   NULL    ,   NULL),
+                                                -- Partido Argentina - Francia - Final
+                        (idJugador(1, 23)   ,  7 ,  NULL          , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 3)    ,  7 ,idJugador(1, 21), NULL    ,   NULL        ,   120     ,   1   ),
+                        (idJugador(1, 21)   ,  7 ,idJugador(1, 3) , 120     ,   1           ,   NULL    ,   NULL),
+                        (idJugador(1, 13)   ,  7 ,  NULL          , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 19)   ,  7 ,  NULL          , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 26)   ,  7 ,idJugador(1, 4) , NULL    ,   NULL        ,   91      ,   NULL),
+                        (idJugador(1, 4)    ,  7 ,idJugador(1, 26), 91      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 7)    ,  7 ,idJugador(1, 5) , NULL    ,   NULL        ,   102     ,   NULL),
+                        (idJugador(1, 5)    ,  7 ,idJugador(1,7)  , 102     ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 20)   ,  7 ,idJugador(1, 6) , NULL    ,   NULL        ,   116     ,   NULL),
+                        (idJugador(1, 6)    ,  7 ,idJugador(1, 20), 116     ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 24)   ,  7 ,  NULL          , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 9)    ,  7 ,idJugador(1, 22), NULL    ,   NULL        ,   102     ,   NULL),
+                        (idJugador(1, 22)   ,  7 ,idJugador(1, 9) , 102     ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 10)   ,  7 ,   NULL         , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(1, 11)   ,  7 ,idJugador(1, 8) , NULL    ,   NULL        ,   64      ,   NULL),
+                        (idJugador(1, 8)    ,  7 ,idJugador(1, 11), 64      ,   NULL        ,   NULL    ,   NULL)
 
 
     ;

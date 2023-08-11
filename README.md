@@ -18,7 +18,7 @@ erDiagram
     }
     TipoPartido{
         TINYINT idTipoPartido PK
-        VARCHAR(10) tipoPartido UK
+        CHAR(13) tipoPartido UK
     }
     Partido{
         TINYINT idPartido PK
@@ -33,7 +33,7 @@ erDiagram
     }
     Posicion{
         TINYINT idPosicion PK
-        VARCHAR(20) posicion UK
+        CHAR(13) posicion UK
     }
     Jugador{
         SMALLINT idJugador PK
@@ -59,6 +59,12 @@ erDiagram
         TINYINT_UNSIGNED minuto PK
         BOOL enContra
     }
+    DefinicionPenal{
+        TINYINT idPartido PK, FK
+        SMALLINT idJugador PK, FK
+        TINYINT_UNSIGNED turno PK
+        BOOL acierto
+    }
 
     Jugador }o--|| Posicion :""
     Jugador }o--|| Pais :""
@@ -68,6 +74,8 @@ erDiagram
     JugadorPartido }o--|| Partido :""
     Gol }o--|| Jugador :""
     Gol }o--|| Partido :""
+    DefinicionPenal }o--|| Jugador :""
+    DefinicionPenal }o--|| Partido :""
 
 
 ```
@@ -76,4 +84,4 @@ erDiagram
 
 ## Créditos
 
-Ayudaron en este script alumnos de 5º7º Ciclo 2023
+Ayudaron en este script alumnos de 5º7º y 5º8º Ciclo 2023

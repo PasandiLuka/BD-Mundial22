@@ -5,10 +5,10 @@
 
 ```mermaid
 erDiagram
-    Pais{
+    Pais{   
         TINYINT idPais PK
-        VARCHAR(30) nombre UK
-        VARCHAR(40) entrenador
+        VARCHAR(20) nombre UK
+        VARCHAR(30) entrenador
         CHAR(1) grupo
     }
     Estadio{
@@ -18,38 +18,52 @@ erDiagram
     }
     TipoPartido{
         TINYINT idTipoPartido PK
-        VARCHAR(10) tipoPartido UK
+        CHAR(13) tipoPartido UK
     }
     Partido{
         TINYINT idPartido PK
         TINYINT idLocal FK
         TINYINT idVisitante FK
         TINYINT idEstadio FK
+        TINYINT idTipoPartido
         TIMESTAMP fecha
         TINYINT golesLocales
         TINYINT golesVisitantes
+        TINYINT_UNSIGNED duracion
     }
     Posicion{
-        SMALLINT idJugador PK
         TINYINT idPosicion PK
-        VARCHAR(20) posicion UK
+        CHAR(13) posicion UK
     }
     Jugador{
-        TINYINT idPosicion PK
+        SMALLINT idJugador PK
         TINYINT idPais FK
-        INT idPosicion FK
-        VARCHAR(20) nombre 
+        TINYINT idPosicion FK
+        VARCHAR(20) nombre
+        VARCHAR(20) apellido
         DATE nacimiento 
         TINYINT_UNSIGNED numCamiseta
     }
     JugadorPartido{
         SMALLINT idJugador PK, FK
         TINYINT idPartido PK, FK
+        SMALLINT idReemplazo FK
+        TINYINT_UNSIGNED ingreso
+        TINYINT_UNSIGNED ingresoAdicionado
+        TINYINT_UNSIGNED egreso
+        TINYINT_UNSIGNED egresoAdicionado
     }
     Gol{
         SMALLINT idJugador PK
         TINYINT idPartido PK, FK
         TINYINT_UNSIGNED minuto PK
+        BOOL enContra
+    }
+    DefinicionPenal{
+        TINYINT idPartido PK, FK
+        SMALLINT idJugador PK, FK
+        TINYINT_UNSIGNED turno PK
+        BOOL acierto
     }
 
     Jugador }o--|| Posicion :""
@@ -60,6 +74,14 @@ erDiagram
     JugadorPartido }o--|| Partido :""
     Gol }o--|| Jugador :""
     Gol }o--|| Partido :""
+    DefinicionPenal }o--|| Jugador :""
+    DefinicionPenal }o--|| Partido :""
 
 
 ```
+
+## Relevamiento
+
+## Créditos
+
+Ayudaron en este script alumnos de 5º7º y 5º8º Ciclo 2023

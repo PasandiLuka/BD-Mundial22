@@ -597,15 +597,21 @@ START TRANSACTION ;
     ;
 
     INSERT INTO Estadio
-        VALUES (1, 'Estadio de Lusail', 'Inagurado el 09-2022, tiene capacidad para 88.966 espectadores')
-
+        VALUES  (1, 'Estadio de Lusail', 'Inagurado el 09-2022, tiene capacidad para 88.966 espectadores'),
+                (2, 'Estadio Ahmed Bin Ali', 'Con capacidad para 45 mil espectadores, se llama Ciudad de la Educación por encontrarse en las proximidades del polo educativo, que nuclea escuelas y universidades en Al Rayyan, al oeste de Doha'),
+                (3, 'Estadio Internacional Khalifa', 'Con capacidad para 40 mil espectadores, fue el primer estadio del mundo en ser construido con una innovadora tecnología de enfriamiento que emplea hasta un 40% menos de energía'),
+                (4, 'Estadio Al Bayt', 'Con capacidad para 60 mil espectadores, posee un llamativo diseño que se asemeja a una carpa árabe. En las inmediaciones del estadio se encuentran parques con lagunas y un amplio estacionamiento'),
+                (5, 'Estadio Al Rayyan', 'Con capacidad para 40 mil espectadores, construido en el lugar del antiguo Estadio Ahmed Bin Ali e inspirado en las dunas de arena de Qatar'),
+                (6, 'Estadio Al Thumama', 'Con capacidad para 40 mil espectadores, cuenta con un imponente diseño que representa la gahfiya, una toca tradicional tejida usada por los hombres en todo el mundo árabe'),
+                (7, 'Estadio 974 Ras Abu Aboud', 'Con capacidad para 40 mil espectadores, fue hecho con contenedores para transportes, asientos removibles y otros "bloques de construcción" modulares. Queda en Doha'),
+                (8, 'Estadio Al Janoub', 'Con capacidad para 40 mil espectadores, está inspirado en las velas de los barcos tradicionales y tiene como objetivo destacar las industrias locales')
     ;
     
     INSERT INTO Partido (idPartido,  idTipoPartido, idLocal,    idVisitante,   idEstadio,  fecha   ,   golesLocales,   golesVisitantes)
         VALUES          (1,         1,              1,          4,             1,  '2022-11-22 07:00', 1,          2),
                         (2,         1,              1,          23,            1,  '2022-11-26 16:00', 2,          0),
-                        (3,         1,              25,         1,             1,  '2022-11-30 16:00', 0,          2),
-                        (4,         2,              1,          5,             1,  '2022-12-03 16:00', 1,          2),
+                        (3,         1,              25,         1,             7,  '2022-11-30 16:00', 0,          2),
+                        (4,         2,              1,          5,             2,  '2022-12-03 16:00', 1,          2),
                         (5,         3,              24,         1,             1,  '2022-12-09 16:00', 2,          2),
                         (6,         4,              1,          11,            1,  '2022-12-13 16:00', 3,          0),
                         (7,         5,              1,          2,             1,  '2022-12-18 12:00', 3,          3)

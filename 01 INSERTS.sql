@@ -761,5 +761,24 @@ START TRANSACTION ;
 
     ;
 
+    INSERT INTO DefinicionPenal (idPartido, idJugador, turno, acierto)
+                            -- Argentina - Paises Bajos
+                    VALUES      (5,  idJugador(1, 10),  2,  TRUE),
+                                (5,  idJugador(1, 5),   4,  TRUE),
+                                (5,  idJugador(1, 4),   6,  TRUE),
+                                (5,  idJugador(1, 24),  8,  FALSE),
+                                (5,  idJugador(1, 22),  10, TRUE),
+                            -- Argentina - Francia
+                                (7,  idJugador(2, 10),  1,  TRUE),
+                                (7,  idJugador(1, 10),  2,  TRUE),
+                                (7,  idJugador(2, 20),  3,  FALSE),
+                                (7,  idJugador(1, 21),  4,  TRUE),
+                                (7,  idJugador(2, 8),   5,  FALSE),
+                                (7,  idJugador(1, 5),   6,  TRUE),
+                                (7,  idJugador(2, 12),  7,  TRUE),
+                                (7,  idJugador(1, 4),   8,  TRUE)
+
+    ;
+
 
 COMMIT;

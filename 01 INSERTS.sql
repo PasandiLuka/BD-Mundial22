@@ -761,6 +761,14 @@ START TRANSACTION ;
 
     ;
 
+    INSERT INTO Gol (idJugador, idPartido, minuto, enContra)
+        -- Partido Argentina - Australia
+        VALUES  (idJugador(1, 10),  4,  35, FALSE),
+                (idJugador(1, 9),   4,  57, FALSE),
+                (idJugador(1, 24),  4,  77, TRUE)
+
+    ;
+
     INSERT INTO DefinicionPenal (idPartido, idJugador, turno, acierto)
                             -- Argentina - Paises Bajos
                     VALUES      (5,  idJugador(1, 10),  2,  TRUE),

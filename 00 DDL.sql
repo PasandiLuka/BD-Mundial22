@@ -101,11 +101,12 @@ CREATE TABLE JugadorPartido(
 );
 
 CREATE TABLE Gol (
-    idJugador SMALLINT NOT NULL,
     idPartido TINYINT NOT NULL,
     minuto TINYINT UNSIGNED NOT NULL,
     adicionado TINYINT UNSIGNED,
+    idJugador SMALLINT NOT NULL,
     enContra BOOL NOT NULL DEFAULT FALSE,
+    CONSTRAINT UQ_Gol_Momento UNIQUE (idPartido, minuto, adicionado),
     CONSTRAINT FK_Gol_Jugador FOREIGN KEY (idJugador)
         REFERENCES Jugador (idJugador),
     CONSTRAINT FK_Gol_Partido FOREIGN KEY (idPartido)

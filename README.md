@@ -59,10 +59,10 @@ erDiagram
         TINYINT_UNSIGNED egresoAdicionado
     }
     Gol{
-        SMALLINT idJugador PK
-        TINYINT idPartido PK, FK
-        TINYINT_UNSIGNED minuto PK
-        TINYINT_UNSIGNED adicionado
+        TINYINT idPartido UK, FK
+        TINYINT_UNSIGNED minuto UQ
+        TINYINT_UNSIGNED adicionado UQ
+        SMALLINT idJugador FK
         BOOL enContra
     }
     DefinicionPenal{

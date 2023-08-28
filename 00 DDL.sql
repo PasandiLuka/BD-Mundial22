@@ -103,7 +103,8 @@ CREATE TABLE JugadorPartido(
 CREATE TABLE Gol (
     idJugador SMALLINT NOT NULL,
     idPartido TINYINT NOT NULL,
-    minuto TINYINT UNSIGNED,
+    minuto TINYINT UNSIGNED NOT NULL,
+    adicionado TINYINT UNSIGNED,
     enContra BOOL NOT NULL DEFAULT FALSE,
     CONSTRAINT FK_Gol_Jugador FOREIGN KEY (idJugador)
         REFERENCES Jugador (idJugador),

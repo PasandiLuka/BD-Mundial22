@@ -1,3 +1,8 @@
+<h1 align="center">E.T. Nº12 D.E. 1º "Libertador Gral. José de San Martín"</h1>
+<p align="center">
+  <img src="https://et12.edu.ar/imgs/computacion/vamoaprogramabanner.png">
+</p>
+
 # BD-Mundial22
  Material para Base de Datos 
 
@@ -57,6 +62,7 @@ erDiagram
         SMALLINT idJugador PK
         TINYINT idPartido PK, FK
         TINYINT_UNSIGNED minuto PK
+        TINYINT_UNSIGNED adicionado
         BOOL enContra
     }
     DefinicionPenal{
@@ -81,6 +87,10 @@ erDiagram
 ```
 
 ## Relevamiento
+
+## Ejercicios
+
+[Base de Datos](Enunciados/bd/README.md)
 
 ## Créditos
 

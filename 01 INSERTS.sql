@@ -436,7 +436,7 @@ START TRANSACTION ;
                 ('Maya','Yoshida','1988-08-24',22,20,2),
                 ('Hiroki','Ito','1999-05-12',26,20,2),
                 ('Wataru','Endo','1993-02-09',6,20,3),
-                ('Goku','Shibasaki','1992-05-28',7,20,3),
+                ('Gaku','Shibasaki','1992-05-28',7,20,3),
                 ('Ritsu','Doan','1998-06-16',8,20,3),
                 ('Kaoru','Mitoma','1997-05-20',9,20,3),
                 ('Takumi','Minamino','1995-01-16',10,20,3),
@@ -761,12 +761,31 @@ START TRANSACTION ;
 
     ;
 
-    INSERT INTO Gol (idJugador, idPartido, minuto, enContra)
-        -- Partido Argentina - Australia
-        VALUES  (idJugador(1, 10),  4,  35, FALSE),
-                (idJugador(1, 9),   4,  57, FALSE),
-                (idJugador(1, 24),  4,  77, TRUE)
-
+    INSERT INTO Gol (idJugador, idPartido, minuto, adicionado, enContra)        
+        VALUES  
+                -- Argentina - Arabia Saudita
+                (idJugador(1, 10),  1,  10, NULL, FALSE),
+                -- Argentina - Mexico
+                (idJugador(1, 10),  2,  64, NULL, FALSE),
+                (idJugador(1, 24),  2,  87, NULL, FALSE),
+                -- Polonia - Argentina
+                (idJugador(1, 20),  3,  46, NULL, FALSE),
+                (idJugador(1, 9),   3,  67, NULL, FALSE),
+                -- Argentina - Australia
+                (idJugador(1, 10),  4,  35, NULL, FALSE),
+                (idJugador(1, 9),   4,  57, NULL, FALSE),
+                (idJugador(1, 24),  4,  77, NULL, TRUE),
+                -- Paises Bajos - Argentina
+                (idJugador(1, 26),  5,  35, NULL, FALSE),
+                (idJugador(1, 10),  5,  73, NULL, FALSE),
+                -- Argentina - Croacia
+                (idJugador(1, 10),  6,  34, NULL, FALSE),
+                (idJugador(1, 9),   6,  39, NULL, FALSE),
+                (idJugador(1, 9),   6,  69, NULL, FALSE),
+                -- Argentina - Francia
+                (idJugador(1, 10),  7,  23, NULL, FALSE),
+                (idJugador(1, 11),  7,  36, NULL, FALSE),
+                (idJugador(1, 10),  7, 108, NULL, FALSE)
     ;
 
     INSERT INTO DefinicionPenal (idPartido, idJugador, turno, acierto)

@@ -1,6 +1,6 @@
 <h1 align="center">E.T. Nº12 D.E. 1º "Libertador Gral. José de San Martín"</h1>
 <p align="center">
-  <img src="https://et12.edu.ar/imgs/computacion/vamoaprogramabanner.png">
+  <img src="https://et12.edu.ar/imgs/computacion/vamoaprogramabanner.png" alt="Banner Computación">
 </p>
 
 # BD-Mundial22
@@ -60,8 +60,8 @@ erDiagram
     }
     Gol{
         TINYINT idPartido UK, FK
-        TINYINT_UNSIGNED minuto UQ
-        TINYINT_UNSIGNED adicionado UQ
+        TINYINT_UNSIGNED minuto UK
+        TINYINT_UNSIGNED adicionado UK
         SMALLINT idJugador FK
         BOOL enContra
     }
@@ -76,6 +76,7 @@ erDiagram
     Jugador }o--|| Pais :""
     Partido }o--|| Estadio :""
     Partido }o--|| TipoPartido :""
+    Partido }o--|| Pais :""
     JugadorPartido }o--|| Jugador :""
     JugadorPartido }o--|| Partido :""
     Gol }o--|| Jugador :""

@@ -189,7 +189,7 @@ START TRANSACTION ;
                 ('Kamal', 'Miller', '1997-05-16', 4, 9, 2),
                 ('Steven', 'Vitoria', '1987-01-11', 5, 9, 2),
                 ('Richie', 'Laryea', '1995-01-07', 22, 9, 2),
-                ('Derek', 'Cornelius', '1997-11-25', 4, 25, 2),
+                ('Derek', 'Cornelius', '1997-11-25', 25, 9, 2),
                 ('Joel', 'Waterman', '1996-01-24', 26, 9, 2),
                 ('Samuel', 'Piette', '1994-11-12', 6, 9, 3),
                 ('Stephen', 'Eustaquio', '1996-12-21', 7, 9, 3),

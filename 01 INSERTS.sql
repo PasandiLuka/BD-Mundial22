@@ -937,6 +937,7 @@ START TRANSACTION ;
     CALL altaPartido (@idHolandaArgentina4, 3, 24, 1, 1, '2022-12-09 16:00', 2, 2, 120);
     CALL altaPartido (@idArgentinaCroacia2, 4,  1, 11, 1, '2022-12-13 16:00', 3, 0, 90);
     CALL altaPartido (@idArgentinaFrancia1, 5, 1, 2, 1, '2022-12-18 12:00', 3, 3, 120);
+    CALL altaPartido (@idFranciaAustraliaGrupo, 1, 2, 5, 8, '2022-11-22 16:00', 4, 1, 90);
 
     INSERT INTO JugadorPartido (idJugador, idPartido, idReemplazo, ingreso, ingresoAdicionado, egreso, egresoAdicionado)
         VALUES              -- Partido Argentina - Arabia Saudita - Grupo C
@@ -1076,7 +1077,24 @@ START TRANSACTION ;
                         (idJugador(1, 22)   ,  @idArgentinaFrancia1 ,idJugador(1, 9) , 102     ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1, 10)   ,  @idArgentinaFrancia1 ,   NULL         , NULL    ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(1, 11)   ,  @idArgentinaFrancia1 ,idJugador(1, 8) , NULL    ,   NULL        ,   64      ,   NULL),
-                        (idJugador(1, 8)    ,  @idArgentinaFrancia1 ,idJugador(1, 11), 64      ,   NULL        ,   NULL    ,   NULL)
+                        (idJugador(1, 8)    ,  @idArgentinaFrancia1 ,idJugador(1, 11), 64      ,   NULL        ,   NULL    ,   NULL),
+                                                -- Partido Francia - Australia - Grupo D
+                        (idJugador(2, 1)    ,  @idFranciaAustraliaGrupo , NULL           , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(2, 2)    ,  @idFranciaAustraliaGrupo ,idJugador(2, 5) , NULL    ,   NULL        ,   89      ,   NULL),
+                        (idJugador(2, 18)   ,  @idFranciaAustraliaGrupo , NULL           , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(2, 21)   ,  @idFranciaAustraliaGrupo ,idJugador(2, 22), NULL    ,   NULL        ,   13      ,   NULL),
+                        (idJugador(2, 24)   ,  @idFranciaAustraliaGrupo , NULL           , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(2, 7)    ,  @idFranciaAustraliaGrupo , NULL           , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(2, 8)    ,  @idFranciaAustraliaGrupo ,idJugador(2, 13), NULL    ,   NULL        ,   77      ,   NULL),
+                        (idJugador(2, 14)   ,  @idFranciaAustraliaGrupo , NULL           , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(2, 9)    ,  @idFranciaAustraliaGrupo ,idJugador(2, 26), NULL    ,   NULL        ,   89      ,   NULL),
+                        (idJugador(2, 10)   ,  @idFranciaAustraliaGrupo , NULL           , NULL    ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(2, 11)   ,  @idFranciaAustraliaGrupo ,idJugador(2, 20), NULL    ,   NULL        ,   77      ,   NULL),
+                        (idJugador(2, 5)    ,  @idFranciaAustraliaGrupo ,idJugador(2, 2) , 89      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(2, 13)   ,  @idFranciaAustraliaGrupo ,idJugador(2, 8) , 77      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(2, 20)   ,  @idFranciaAustraliaGrupo ,idJugador(2, 11), 77      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(2, 22)   ,  @idFranciaAustraliaGrupo ,idJugador(2, 21), 13      ,   NULL        ,   NULL    ,   NULL),
+                        (idJugador(2, 26)   ,  @idFranciaAustraliaGrupo ,idJugador(2, 9) , 89      ,   NULL        ,   NULL    ,   NULL)
 
 
     ;

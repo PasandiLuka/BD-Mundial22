@@ -60,7 +60,7 @@ CREATE TABLE Jugador(
     idPais TINYINT NOT NULL,
     idPosicion TINYINT NOT NULL,
     nombre VARCHAR(20) NOT NULL,
-    apellido VARCHAR(25) NOT NULL,
+    apellido VARCHAR(27) NOT NULL,
     nacimiento DATE NOT NULL,
     numCamiseta TINYINT UNSIGNED NOT NULL,
     CONSTRAINT FK_Jugador_Pais FOREIGN KEY (idPais)

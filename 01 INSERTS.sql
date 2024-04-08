@@ -939,6 +939,7 @@ START TRANSACTION ;
     CALL altaPartido (@idArgentinaFrancia1, 5, 1, 2, 1, '2022-12-18 12:00', 3, 3, 120);
     CALL altaPartido (@idFranciaAustraliaGrupo, 1, 2, 5, 8, '2022-11-22 16:00', 4, 1, 90);
     CALL altaPartido (@idFranciaDinamarcaGrupo, 1, 2, 12, 7, '2022-11-26 13:00', 2, 1, 90);
+    CALL altaPartido (@idTunezFranciaGrupo, 1, 31, 2, 2, '2022-11-30 12:00', 1, 0, 90);
 
     INSERT INTO JugadorPartido (idJugador, idPartido, idReemplazo, ingreso, ingresoAdicionado, egreso, egresoAdicionado)
         VALUES              -- Partido Argentina - Arabia Saudita - Grupo C
@@ -1111,8 +1112,24 @@ START TRANSACTION ;
                         (idJugador(2, 26)   ,  @idFranciaDinamarcaGrupo ,idJugador(2, 9) , 63      ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(2, 20)   ,  @idFranciaDinamarcaGrupo ,idJugador(2, 11), 75      ,   NULL        ,   NULL    ,   NULL),
                         (idJugador(2, 13)   ,  @idFranciaDinamarcaGrupo ,idJugador(2, 7) , 90      ,   2           ,   NULL    ,   NULL),
-                        (idJugador(2, 24)   ,  @idFranciaDinamarcaGrupo ,idJugador(2, 4) , 75      ,   NULL        ,   NULL    ,   NULL)
-
+                        (idJugador(2, 24)   ,  @idFranciaDinamarcaGrupo ,idJugador(2, 4) , 75      ,   NULL        ,   NULL    ,   NULL),
+                                                -- Partido Tunez - Francia - Grupo D
+                        (idJugador(2, 16)   ,  @idTunezFranciaGrupo , NULL              , NULL    ,   NULL        ,   NULL  ,   NULL),
+                        (idJugador(2, 3)    ,  @idTunezFranciaGrupo , NULL              , NULL    ,   NULL        ,   NULL  ,   NULL),
+                        (idJugador(2, 4)    ,  @idTunezFranciaGrupo ,idJugador(2, 17)   , NULL    ,   NULL        ,   63    ,   NULL),
+                        (idJugador(2, 24)   ,  @idTunezFranciaGrupo , NULL              , NULL    ,   NULL        ,   NULL  ,   NULL),
+                        (idJugador(2, 25)   ,  @idTunezFranciaGrupo , NULL              , NULL    ,   NULL        ,   NULL  ,   NULL),
+                        (idJugador(2, 8)    ,  @idTunezFranciaGrupo , NULL              , NULL    ,   NULL        ,   NULL  ,   NULL),
+                        (idJugador(2, 13)   ,  @idTunezFranciaGrupo ,idJugador(2, 7)    , NULL    ,   NULL        ,   73    ,   NULL),
+                        (idJugador(2, 15)   ,  @idTunezFranciaGrupo ,idJugador(2, 14)   , NULL    ,   NULL        ,   63    ,   NULL),
+                        (idJugador(2, 6)    ,  @idTunezFranciaGrupo ,idJugador(2, 11)   , NULL    ,   NULL        ,   79    ,   NULL),
+                        (idJugador(2, 12)   ,  @idTunezFranciaGrupo , NULL              , NULL    ,   NULL        ,   NULL  ,   NULL),
+                        (idJugador(2, 20)   ,  @idTunezFranciaGrupo ,idJugador(2, 10)   , NULL    ,   NULL        ,   63    ,   NULL),
+                        (idJugador(2, 7)    ,  @idTunezFranciaGrupo ,idJugador(2, 13)   , 73      ,   NULL        ,   NULL  ,   NULL),
+                        (idJugador(2, 10)   ,  @idTunezFranciaGrupo ,idJugador(2, 20)   , 63      ,   NULL        ,   NULL  ,   NULL),
+                        (idJugador(2, 11)   ,  @idTunezFranciaGrupo ,idJugador(2, 6)    , 79      ,   NULL        ,   NULL  ,   NULL),
+                        (idJugador(2, 14)   ,  @idTunezFranciaGrupo ,idJugador(2, 15)   , 63      ,   NULL        ,   NULL  ,   NULL),
+                        (idJugador(2, 17)   ,  @idTunezFranciaGrupo ,idJugador(2, 4)    , 63      ,   NULL        ,   NULL  ,   NULL)
     ;
 
     INSERT INTO Gol (idJugador, idPartido, minuto, adicionado, enContra)        

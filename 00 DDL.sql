@@ -118,7 +118,7 @@ CREATE TABLE DefinicionPenal (
     idJugador SMALLINT,
     turno TINYINT UNSIGNED,
     acierto BOOL NOT NULL,
-    CONSTRAINT PK_DefinicionPenal PRIMARY KEY (idPartido, idJugador, turno),
+    CONSTRAINT PK_DefinicionPenal PRIMARY KEY (idPartido, turno),
     CONSTRAINT FK_DefinicionPenal_Jugador FOREIGN KEY (idJugador)
         REFERENCES Jugador (idJugador),
     CONSTRAINT FK_DefinicionPenal_Partido FOREIGN KEY (idPartido)

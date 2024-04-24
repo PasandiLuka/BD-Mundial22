@@ -940,6 +940,7 @@ START TRANSACTION ;
     CALL altaPartido (@idFranciaAustraliaGrupo, 1, 2, 5, 8, '2022-11-22 16:00', 4, 1, 90);
     CALL altaPartido (@idFranciaDinamarcaGrupo, 1, 2, 12, 7, '2022-11-26 13:00', 2, 1, 90);
     CALL altaPartido (@idTunezFranciaGrupo, 1, 31, 2, 2, '2022-11-30 12:00', 1, 0, 90);
+    CALL altaPartido (@idFranciaPolonia8, 2, 2, 25, 6, '2022-12-4 12:00', 3, 1, 90);
 
     INSERT INTO JugadorPartido (idJugador, idPartido, idReemplazo, ingreso, ingresoAdicionado, egreso, egresoAdicionado)
         VALUES              -- Partido Argentina - Arabia Saudita - Grupo C
@@ -1129,7 +1130,23 @@ START TRANSACTION ;
                         (idJugador(2, 10)   ,  @idTunezFranciaGrupo ,idJugador(2, 20)   , 63      ,   NULL        ,   NULL  ,   NULL),
                         (idJugador(2, 11)   ,  @idTunezFranciaGrupo ,idJugador(2, 6)    , 79      ,   NULL        ,   NULL  ,   NULL),
                         (idJugador(2, 14)   ,  @idTunezFranciaGrupo ,idJugador(2, 15)   , 63      ,   NULL        ,   NULL  ,   NULL),
-                        (idJugador(2, 17)   ,  @idTunezFranciaGrupo ,idJugador(2, 4)    , 63      ,   NULL        ,   NULL  ,   NULL)
+                        (idJugador(2, 17)   ,  @idTunezFranciaGrupo ,idJugador(2, 4)    , 63      ,   NULL        ,   NULL  ,   NULL),
+                                                -- Partido Francia - Polonia - 8vos
+                        (idJugador(2,1),    @idFranciaPolonia8, NULL,               NULL ,  NULL,   NULL,   NULL),
+                        (idJugador(2,5),    @idFranciaPolonia8, idJugador(2, 3),    Null ,  NULL,   90,     2),
+                        (idJugador(2,4),    @idFranciaPolonia8, NULL,               NULL ,  NULL,   NULL ,  NULL),
+                        (idJugador(2,18),   @idFranciaPolonia8, NULL,               NULL ,  NULL,   NULL ,  NULL),
+                        (idJugador(2,22),   @idFranciaPolonia8, NULL,               NULL ,  NULL,   NULL ,  NULL),
+                        (idJugador(2,8),    @idFranciaPolonia8, idJugador(2, 13),   NULL ,  NULL,   66,     NULL),
+                        (idJugador(2,14),   @idFranciaPolonia8, NULL ,              NULL ,  NULL,   NULL,   NULL),
+                        (idJugador(2,11),   @idFranciaPolonia8, idJugador(2, 20),   NULL ,  NULL,   76,     NULL),
+                        (idJugador(2,7),    @idFranciaPolonia8, NULL,               NULL ,  NULL,   NULL ,  NULL),
+                        (idJugador(2,10),   @idFranciaPolonia8, NULL,               NULL ,  NULL,   NULL ,  NULL),
+                        (idJugador(2,9),    @idFranciaPolonia8, idJugador(2, 26),   NULL ,  NULL,   76,     NULL),
+                        (idJugador(2,3),    @idFranciaPolonia8, idJugador(2, 5),    90,     2,      NULL ,  NULL),
+                        (idJugador(2,13),   @idFranciaPolonia8, idJugador(2, 8),    66,     NULL,   NULL ,  NULL),
+                        (idJugador(2,20),   @idFranciaPolonia8, idJugador(2, 11),   76,     NULL,   NULL ,  NULL),
+                        (idJugador(2,26),   @idFranciaPolonia8, idJugador(2, 9),    76,     NULL,   NULL ,  NULL)
     ;
 
     INSERT INTO Gol (idJugador, idPartido, minuto, adicionado, enContra)        
@@ -1156,7 +1173,11 @@ START TRANSACTION ;
                 -- Argentina - Francia
                 (idJugador(1, 10),  @idArgentinaFrancia1,  23, NULL, FALSE),
                 (idJugador(1, 11),  @idArgentinaFrancia1,  36, NULL, FALSE),
-                (idJugador(1, 10),  @idArgentinaFrancia1, 108, NULL, FALSE)
+                (idJugador(1, 10),  @idArgentinaFrancia1, 108, NULL, FALSE),
+                -- Francia - Polonia
+                (idJugador(1, 9),   @idFranciaPolonia8, 44, NULL,   FALSE),
+                (idjugador(1, 10),  @idFranciaPolonia8, 74, NULL,   FALSE),
+                (idjugador(1, 10),  @idFranciaPolonia8, 90, 1,      FALSE)
     ;
 
     INSERT INTO DefinicionPenal (idPartido, idJugador, turno, acierto)

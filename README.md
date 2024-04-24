@@ -91,8 +91,11 @@ erDiagram
 
 ## Ejercicios
 
-[Base de Datos](Enunciados/bd/README.md)
+- [Base de Datos](Enunciados/bd/README.md)
+- [Administración y Gestión de Base de Datos](Enunciados/agbd/README.md)
 
 ## Créditos
 
-Ayudaron en este script alumnos de 5º7º y 5º8º Ciclo 2023
+Ayudaron en este script:
+- Alumnos de 4°7°, 4° 8°, 5°7° y 5°8° Ciclo 2023.
+- Alumnos de 5°7° y 5°8° Ciclo 2024.

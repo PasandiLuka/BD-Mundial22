@@ -1170,10 +1170,12 @@ START TRANSACTION ;
                 (idJugador(1, 10),  @idArgentinaCroacia2,  34, NULL, FALSE),
                 (idJugador(1, 9),   @idArgentinaCroacia2,  39, NULL, FALSE),
                 (idJugador(1, 9),   @idArgentinaCroacia2,  69, NULL, FALSE),
-                -- Argentina - Francia
+                -- Argentina 3 - Francia
                 (idJugador(1, 10),  @idArgentinaFrancia1,  23, NULL, FALSE),
                 (idJugador(1, 11),  @idArgentinaFrancia1,  36, NULL, FALSE),
                 (idJugador(1, 10),  @idArgentinaFrancia1, 108, NULL, FALSE),
+                -- Tunez 1 - Francia 0
+                (idJugador(31,10),  @idTunezFranciaGrupo,  58, NULL, FALSE),
                 -- Francia - Polonia
                 (idJugador(1, 9),   @idFranciaPolonia8, 44, NULL,   FALSE),
                 (idjugador(1, 10),  @idFranciaPolonia8, 74, NULL,   FALSE),

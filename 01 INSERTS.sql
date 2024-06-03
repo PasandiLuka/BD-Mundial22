@@ -930,6 +930,7 @@ START TRANSACTION ;
     ;
 
     -- (idPartido,  idTipoPartido, idLocal,    idVisitante,   idEstadio,  fecha   ,   golesLocales,   golesVisitantes, duracion)
+    -- Argentina 1 - Arabia 2
     CALL altaPartido (@idArgentinaArabiaGrupo, 1, 1, 4, 1, '2022-11-22 07:00', 1, 2, 90);
     CALL altaPartido (@idArgentinaMexicoGrupo, 1, 1, 23, 1, '2022-11-26 16:00', 2, 0, 90);
     CALL altaPartido (@idPoloniaArgentinaGrupo, 1, 25, 1, 7, '2022-11-30 16:00', 0, 2, 90);
@@ -1151,8 +1152,10 @@ START TRANSACTION ;
 
     INSERT INTO Gol (idJugador, idPartido, minuto, adicionado, enContra)        
         VALUES  
-                -- Argentina - Arabia Saudita
+                -- Argentina 1 - Arabia Saudita 2
                 (idJugador(1, 10),  @idArgentinaArabiaGrupo,  10, NULL, FALSE),
+                (idJugador(4, 11),  @idArgentinaArabiaGrupo,  48, NULL, FALSE),
+                (idJugador(4, 10),  @idArgentinaArabiaGrupo,  53, NULL, FALSE),
                 -- Argentina - Mexico
                 (idJugador(1, 10),  @idArgentinaMexicoGrupo,  64, NULL, FALSE),
                 (idJugador(1, 24),  @idArgentinaMexicoGrupo,  87, NULL, FALSE),

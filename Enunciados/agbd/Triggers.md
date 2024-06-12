@@ -15,17 +15,17 @@ Pueden consultar como **ordenar la ejecución de triggers**  sobre una misma tab
 ```sql
 -- Punto 1 - Este insert tiene que fallar porque Armani no jugó ningún partido para Arg.
 INSERT INTO Gol (idJugador, idPartido, minuto, adicionado, enContra) 
-                (   1,        1,        13,   TRUE);
+    VALUES      (   1,        1,        13,   TRUE);
 
 -- Punto 1 - Este insert tiene que fallar porque Tagliafico se retiró del partido al minuto 71
 INSERT INTO Gol (idJugador, idPartido, minuto, adicionado, enContra) 
-                (   3,        1,        74,   NULL,     FALSE);
+    VALUES      (   3,        1,        74,   NULL,     FALSE);
 ```
 
 ```sql
 -- Punto 2 - Este insert tiene que actualizar el resultado del partido porque es valido
 INSERT INTO Gol (idJugador, idPartido, minuto, adicionado, enContra) 
-                (   1,        1,        74,     NULL,     FALSE);
+    VALUES      (   1,        1,        74,     NULL,     FALSE);
 
 -- Al hacer esta consulta, tiene que dar 2 - 2 (originalmente perdimos, pero es para probar) luego del insert anterior.
 SELECT golesLocales, golesVisitantes
@@ -33,7 +33,7 @@ FROM Partido WHERE idPartido = 1;
 
 -- Gol en contra de Messi.
 INSERT INTO Gol (idJugador, idPartido, minuto, adicionado, enContra) 
-                (   10,        1,        80,   FALSE);
+    VALUES      (   10,        1,        80,   FALSE);
 
 -- Y ahora el partido debería terminar 3 para el local y 2 para el visitante.
 SELECT golesLocales, golesVisitantes
@@ -43,10 +43,10 @@ FROM Partido WHERE idPartido = 1;
 ```sql
 -- Punto 3 - Este insert tiene que fallar porque el partido no terminó en empate (Arg-Mex).
 INSERT INTO DefinicionPenal (idPartido, idJugador, turno, acierto)
-                            (2,         10,        1,   TRUE);
+    VALUES                  (2,         10,        1,   TRUE);
 
 -- Punto 3 - Aca tiene que fallar, porque Nahuel Molina no terminó la final contra Francia.
 INSERT INTO DefinicionPenal (idPartido, idJugador, turno, acierto)
-                            (7,         26,        14,   TRUE);
+    VALUES                  (7,         26,        14,   TRUE);
 
 ```

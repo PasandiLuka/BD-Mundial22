@@ -942,6 +942,7 @@ START TRANSACTION ;
     CALL altaPartido (@idFranciaDinamarcaGrupo, 1, 2, 12, 7, '2022-11-26 13:00', 2, 1, 90);
     CALL altaPartido (@idTunezFranciaGrupo, 1, 31, 2, 2, '2022-11-30 12:00', 1, 0, 90);
     CALL altaPartido (@idFranciaPolonia8, 2, 2, 25, 6, '2022-12-4 12:00', 3, 1, 90);
+    CALL altaPartido (@idMarruecosCroaciaGrupo, 1, 22, 11, 3, '2022-11-23 07:00', 0, 0, 90);
 
     INSERT INTO JugadorPartido (idJugador, idPartido, idReemplazo, ingreso, ingresoAdicionado, egreso, egresoAdicionado)
         VALUES              -- Partido Argentina - Arabia Saudita - Grupo C
